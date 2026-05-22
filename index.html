@@ -489,33 +489,32 @@ button:disabled { opacity: 0.3; cursor: not-allowed; }
 
   <!-- ── DEOXYGENATED (BLUE) ── -->
 
-  <!-- Precaval L — starts from left side of anterior body tissue (cx=500,cy=74,rx=130,ry=30),
-       exits bottom-left around (420,90), curves down to Sinus Venosus -->
-  <path d="M420,90 C400,104 372,150 368,208 C368,224 382,238 390,252 C414,264 430,270 440,276 C444,277 453,278 453,278"
+  <!-- Precaval L — smooth single cubic bezier from anterior body to Sinus Venosus -->
+  <path d="M420,90 C390,130 360,190 453,278"
     fill="none" stroke="#1d4ed8" stroke-width="9" stroke-dasharray="7,5"
     stroke-linecap="round" opacity="0.9"/>
-  <path d="M420,90 C400,104 372,150 368,208 C368,224 382,238 390,252 C414,264 430,270 440,276 C444,277 453,278 453,278"
+  <path d="M420,90 C390,130 360,190 453,278"
     fill="none" stroke="#0d1528" stroke-width="5"
     stroke-linecap="round" opacity="1"/>
   <path id="vp-precL" class="vessel vmajor"
     data-vessel="Precaval Vein (Left) — deoxygenated blood from anterior body to Sinus Venosus"
     data-label="Precaval Vein (L)" data-lx="340" data-ly="160" data-color="#93c5fd"
-    d="M420,90 C400,104 372,150 368,208 C368,224 382,238 390,252 C414,264 430,270 440,276 C444,277 453,278 453,278"
+    d="M420,90 C390,130 360,190 453,278"
     fill="none" stroke="transparent" stroke-width="12"
     stroke-linecap="round" opacity="0.85" marker-end="url(#aBlue)"/>
 
   <!-- Precaval R — starts from right side of anterior body tissue,
        exits bottom-right around (580,90), curves down to Sinus Venosus -->
-  <path d="M580,90 C600,104 628,150 632,208 C632,224 618,238 610,252 C576,264 476,272 462,276 C458,277 453,278 453,278"
+  <path d="M580,90 C610,130 640,190 453,278"
     fill="none" stroke="#1d4ed8" stroke-width="9" stroke-dasharray="7,5"
     stroke-linecap="round" opacity="0.9"/>
-  <path d="M580,90 C600,104 628,150 632,208 C632,224 618,238 610,252 C576,264 476,272 462,276 C458,277 453,278 453,278"
+  <path d="M580,90 C610,130 640,190 453,278"
     fill="none" stroke="#0d1528" stroke-width="5"
     stroke-linecap="round" opacity="1"/>
   <path id="vp-precR" class="vessel vmajor"
     data-vessel="Precaval Vein (Right) — deoxygenated blood from anterior body to Sinus Venosus"
     data-label="Precaval Vein (R)" data-lx="660" data-ly="160" data-color="#93c5fd"
-    d="M580,90 C600,104 628,150 632,208 C632,224 618,238 610,252 C576,264 476,272 462,276 C458,277 453,278 453,278"
+    d="M580,90 C610,130 640,190 453,278"
     fill="none" stroke="transparent" stroke-width="12"
     stroke-linecap="round" opacity="0.85" marker-end="url(#aBlue)"/>
 
@@ -810,7 +809,7 @@ button:disabled { opacity: 0.3; cursor: not-allowed; }
 <g id="vessel-label-layer" pointer-events="none"></g>
 
 <!-- Heart title (always visible, small) -->
-<text x="500" y="258" text-anchor="middle" font-family="'Crimson Pro',serif" font-size="11" fill="#4b5563" font-style="italic">♥ Three-chambered Heart</text>
+<text x="680" y="410" text-anchor="middle" font-family="'Crimson Pro',serif" font-size="12" fill="#6b7280" font-style="italic" letter-spacing="0.04em">♥ Three-chambered Heart</text>
 
 <!-- Click hint -->
 <text x="500" y="636" text-anchor="middle" font-family="'Source Sans 3',sans-serif" font-size="10" fill="#374151" letter-spacing="0.05em">HOVER VESSELS FOR LABELS · CLICK STRUCTURES FOR DETAILS</text>
@@ -1282,8 +1281,8 @@ function stopAnim() {
 // ── Paths (match new curved vessel geometry) ──
 // COLLECT — deoxygenated → sinus/RA
 const pathBodySinus   = [[500,104],[453,104],[421,118],[410,148],[421,258],[444,274],[453,278]];
-const pathPrecavalL   = [[420,90],[400,104],[372,150],[368,208],[382,238],[390,252],[414,264],[430,270],[440,276],[453,278]];
-const pathPrecavalR   = [[580,90],[600,104],[628,150],[632,208],[618,238],[610,252],[576,264],[476,272],[462,276],[453,278]];
+const pathPrecavalL   = [[420.0,90.0],[416.3,95.1],[412.6,100.4],[409.0,106.0],[405.6,111.7],[402.4,117.7],[399.4,123.9],[396.8,130.3],[394.6,137.0],[392.7,143.9],[391.4,151.0],[390.6,158.4],[390.4,166.0],[390.8,173.9],[391.9,182.0],[393.8,190.4],[396.4,199.0],[400.0,207.9],[404.4,217.1],[409.8,226.6],[416.2,236.3],[423.7,246.3],[432.2,256.6],[442.0,267.1],[453.0,278.0]];
+const pathPrecavalR   = [[580.0,90.0],[583.7,95.1],[587.4,100.4],[590.8,106.0],[594.0,111.7],[596.8,117.7],[599.1,123.9],[600.9,130.3],[602.0,137.0],[602.3,143.9],[601.8,151.0],[600.4,158.4],[597.9,166.0],[594.3,173.9],[589.4,182.0],[583.3,190.4],[575.7,199.0],[566.6,207.9],[556.0,217.1],[543.6,226.6],[529.4,236.3],[513.4,246.3],[495.4,256.6],[475.3,267.1],[453.0,278.0]];
 const pathPostcaval   = [[500,490],[480,462],[430,438],[390,420],[358,405],[340,375],[342,340],[344,308],[368,290],[421,278],[444,274],[453,278]];
 // COLLECT — oxygenated → LA
 const pathLeftLungLA  = [[213,300],[260,270],[330,232],[390,230],[440,228],[490,238],[520,262],[536,274],[545,292],[549,310]];
